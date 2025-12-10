@@ -44,7 +44,7 @@ void print_student(const struct Student *s) {
     printf("Student(name=\"%s\", id=%d)\n", s->name, s->id);
 }
 
-int main(void) {
+int main(int argc, char *argv[]) {
     print_header();
     print_numbers(5);
 
@@ -59,6 +59,11 @@ int main(void) {
     struct Student s = {"OSLab", 25200000};
     print_student(&s);
 
+    if (argc > 1) {
+        printf("First argument: %s\n", argv[1]);
+    } else {
+        printf("No arguments given.\n");
+    }
+
     return 0;
 }
-
