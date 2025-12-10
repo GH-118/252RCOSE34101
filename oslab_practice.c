@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stddef.h>
 
+struct Student {
+    char name[32];
+    int id;
+};
+
 void print_header(void) {
     printf("==== OS Lab Git Practice ====\n");
 }
@@ -35,6 +40,10 @@ double average(const int *arr, size_t len) {
     return (double)sum / (double)len;
 }
 
+void print_student(const struct Student *s) {
+    printf("Student(name=\"%s\", id=%d)\n", s->name, s->id);
+}
+
 int main(void) {
     print_header();
     print_numbers(5);
@@ -47,5 +56,9 @@ int main(void) {
     double avg = average(scores, sizeof(scores) / sizeof(scores[0]));
     printf("average score = %.2f\n", avg);
 
+    struct Student s = {"OSLab", 25200000};
+    print_student(&s);
+
     return 0;
 }
+
