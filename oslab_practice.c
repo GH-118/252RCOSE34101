@@ -1,4 +1,5 @@
-include <stdio.h>
+#include <stdio.h>
+#include <stddef.h>
 
 void print_header(void) {
     printf("==== OS Lab Git Practice ====\n");
@@ -23,11 +24,28 @@ int factorial(int n) {
     return result;
 }
 
+double average(const int *arr, size_t len) {
+    if (len == 0) {
+        return 0.0;
+    }
+    long long sum = 0;
+    for (size_t i = 0; i < len; i++) {
+        sum += arr[i];
+    }
+    return (double)sum / (double)len;
+}
+
 int main(void) {
     print_header();
     print_numbers(5);
+
     int n = 5;
     int fact = factorial(n);
     printf("factorial(%d) = %d\n", n, fact);
+
+    int scores[] = {80, 90, 75, 95};
+    double avg = average(scores, sizeof(scores) / sizeof(scores[0]));
+    printf("average score = %.2f\n", avg);
+
     return 0;
 }
