@@ -7,7 +7,7 @@ struct Student {
 };
 
 void print_header(void) {
-    printf("==== OS Lab Git Practice ====\n");
+    printf("\n==== OS Lab Git Practice ====\n\n");
 }
 
 void print_numbers(int n) {
@@ -15,7 +15,7 @@ void print_numbers(int n) {
     for (int i = 1; i <= n; i++) {
         printf("%d ", i);
     }
-    printf("\n");
+    printf("\n\n");
 }
 
 int factorial(int n) {
@@ -41,7 +41,7 @@ double average(const int *arr, size_t len) {
 }
 
 void print_student(const struct Student *s) {
-    printf("Student(name=\"%s\", id=%d)\n", s->name, s->id);
+    printf("Student(name=\"%s\", id=%d)\n\n", s->name, s->id);
 }
 
 int main(int argc, char *argv[]) {
@@ -50,19 +50,19 @@ int main(int argc, char *argv[]) {
 
     int n = 5;
     int fact = factorial(n);
-    printf("factorial(%d) = %d\n", n, fact);
+    printf("factorial(%d) = %d\n\n", n, fact);
 
     int scores[] = {80, 90, 75, 95};
     double avg = average(scores, sizeof(scores) / sizeof(scores[0]));
-    printf("average score = %.2f\n", avg);
+    printf("average score = %.2f\n\n", avg);
 
     struct Student s = {"OSLab", 25200000};
     print_student(&s);
 
     if (argc > 1) {
-        printf("First argument: %s\n", argv[1]);
+        printf("First argument: %s\n\n", argv[1]);
     } else {
-        printf("No arguments given.\n");
+        printf("No arguments given.\n\n");
     }
 
     FILE *fp = fopen("oslab_output.txt", "w");
